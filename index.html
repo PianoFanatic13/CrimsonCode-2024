@@ -11,6 +11,97 @@
     <div class="header">
         <img src="Website logo.png" width="546" height="180" alt="recipes.compare header">
     </div>
+    <h2 style="color: #49331b;">Welcome to Recipes.compare!</h2>
+    <div class="ingredientList">Ingredient List</div>
+        <form id="submitIngredients">
+            <div>
+                <input 
+                    type="text"
+                    id="ingredientsForm"
+                    placeholder="Enter Ingredients (Comma Separated)"
+                />
+                <button id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>        
+    <form>
+        <hr><p>Cuisine:</p>
+        <input type="radio" name = "Cuisine"> African
+        <input type="radio" name = "Cuisine"> American
+        <input type="radio" name = "Cuisine"> Caribbean <br>
+        <input type="radio" name = "Cuisine"> Chinese 
+        <input type="radio" name = "Cuisine"> French
+        <input type="radio" name = "Cuisine"> German <br>
+        <input type="radio" name = "Cuisine"> Greek
+        <input type="radio" name = "Cuisine"> Indian
+        <input type="radio" name = "Cuisine"> Italian <br>
+        <input type="radio" name = "Cuisine"> Japanese
+        <input type="radio" name = "Cuisine"> Korean 
+        <input type="radio" name = "Cuisine"> Latin American <br>
+        <input type="radio" name = "Cuisine"> Thai
+        <input type="radio" name = "Cuisine"> Vietnamese <br><br>
+    </form>
+
+    <form>
+        <hr><p>Filters:</p>
+        <input type="radio" name = "Diet"> Keto
+        <input type="radio" name = "Diet"> Pescetarian <br>
+        <input type="radio" name = "Diet"> Paleo 
+        <input type="radio" name = "Diet"> Vegan <br>
+        <input type="radio" name = "Diet"> Gluten Free 
+        <input type="radio" name = "Diet"> Dairy Free <br>
+    </form>
+</div>
+
+    <div class="wrapper">
+        <div class="values">
+            <span id="range1"></span>
+            <span> &dash; </span>
+            <span id="range2"></span>
+            calories
+        </div>
+        <div class="container">
+            <div class="slider-track"></div>
+            <input type="range" min="0" max="2000" value="600" id="slider-1" name="slider1" oninput="slideOne()">
+            <input type="range" min="0" max="2000" value="1400" id="slider-2" name="slider2" oninput="slideTwo()">
+        </div>
+    </div>
+
+    </div>
+    <myButton id = "generateButton" href="#" style = "--clr: #cfa788">
+        <span>
+            Generate
+        </span>
+    </myButton>
+        <div>
+            This application was made by Abdul Islam, Charles Liu, Eric Du,
+        </div>
+    <div>
+    and Mir Park.
+    </div>
+
+    <div class="resultsTitleContainer">
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Thing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-box"></div>
+    <div class="header">
+        <img src="Website logo.png" width="546" height="180" alt="recipes.compare header">
+    </div>
 
     <form action="results.html" method="GET">
         <h2 style="color: #49331b;">Welcome to Recipes.compare!</h2>
@@ -68,7 +159,13 @@
         <button type="submit">
             Submit
         </button>
+
+        <div class="resultsTitleContainer">
+
+        </div>
+
     </form>
     <script src="main.js"></script>
 </body>
 </html>
+-->
