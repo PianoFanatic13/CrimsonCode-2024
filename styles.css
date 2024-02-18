@@ -53,6 +53,7 @@ input[type="range"]{
 input[type="range"]::-webkit-slider-runnable-track{
     -webkit-appearance: none;
     height: 5px;
+    background-color: whitesmoke;
 }
 input[type="range"]::-moz-range-track{
     -moz-appearance: none;
@@ -70,6 +71,7 @@ input[type="range"]::-webkit-slider-thumb{
     margin-top: -9px;
     pointer-events: auto;
     border-radius: 50%;
+    background-color:#a48d6f;
 }
 input[type="range"]::-moz-range-thumb{
     -webkit-appearance: none;
@@ -87,9 +89,7 @@ input[type="range"]::-ms-thumb{
     border-radius: 50%;
     pointer-events: auto;
 }
-input[type="range"]:active::-webkit-slider-thumb{
-    background-color: #785a25;
-}
+
 .values{
     width: 32%;
     position: relative;
