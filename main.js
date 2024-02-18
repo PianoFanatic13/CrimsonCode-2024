@@ -32,8 +32,6 @@ window.onload = function () {
   }
 
 
-
-// Replace 'YOUR_API_KEY' with your actual Spoonacular API key
 const apiKey = 'b7024835d12443c3950e05df4c5db1ff';
 
 // Function to fetch recipes based on cuisine, diet, and available ingredients
@@ -45,7 +43,7 @@ async function fetchRecipesByCriteria(cuisine, diet, ingredients) {
     diet,
     includeIngredients: ingredients.join(','),
     number: 3, // Number of recipes to return
-    ranking: 2,
+    ranking: 2, //Minimize missing ingredients
     instructionsRequired: true, // Ensure instructions are included in response
     addRecipeInformation: true
   });
@@ -101,27 +99,11 @@ function handleRadioSelectionDiet(event, callback) {
   console.log('Selected Diet:', selectedDiet);
 }
 
+function showResults() {
+  document.getElementById("resultsTitle").innerHTML = "Results";
+}
 
 
-
-// Main function to execute the program
-/* async function main() {
-  try {
-    const { diet, cuisine, ingredients } = await getIngredientList();
-    console.log('Fetching recipes based on diet:', diet || 'any', ', cuisine:', cuisine || 'any', ', and ingredients:', ingredients);
-    const recipes = await fetchRecipesByCriteria(cuisine, diet, ingredients);
-    if (recipes.length === 0) {
-      console.log('No recipes found based on the provided criteria.');
-    } else {
-      console.log('Suggested Recipes:');
-      recipes.forEach(recipe => {
-        console.log(recipe.title, '- URL:', recipe.sourceUrl);
-      });
-    }
-  } catch (error) {
-    console.error(error.message);
-  }
-} */
 
 var ingredientsList;
 var cuisine = '';
@@ -161,22 +143,6 @@ document.querySelectorAll('input[name="Diet"]').forEach(radio => {
   });
 });
 
-/* document.addEventListener('DOMContentLoaded', function() {
-  // Add event listener to the generate button
-  document.getElementById('generateButton').addEventListener('click', function() {
-    const recipes = fetchRecipesByCriteria(cuisine, diet, ingredientsList);
-
-    if (recipes.length === 0) {
-      console.log('No recipes found based on the provided criteria.');
-    } else {
-      console.log('Suggested Recipes:');
-      recipes.forEach(recipe => {
-        console.log(recipe.title, '- URL:', recipe.sourceUrl);
-      });
-  };
-});
-}); */
-
 document.addEventListener('DOMContentLoaded', function() {
   // Add event listener to the generate button
   document.getElementById('generateButton').addEventListener('click', async function() {
@@ -203,113 +169,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.getElementById("generateButton").addEventListener("click", showResults);
 
 
 
-/* function main(ingredientsList, cuisine) {
-
-
-console.log('Ingredients List:', ingredientsList);
-
-console.log("Cuisine is:", cuisine);
-
-//console.log("Diet is:", diet);
-
-}
-
-// Execute the main function
-main(); */
-
-
-
-
-/*
-document.querySelector("#newTask-Form").addEventListener("submit", (event) => {
-  event.preventDefault()
-  const ingredients = 
-});
-
-
-
-const resultsTitleContainer = document.querySelector("#resultsTitleContainer");
+/* const resultsTitleContainer = document.querySelector("#resultsTitleContainer");
 
 const resultsTitle = document.createElement('div');
 resultsTitle.id = resultsTitle;
 resultsTitle.value = "Results"
 
-resultsTitleContainer.appendChild(resultsTitle);
-*/
-
-
-
-
-/*
-// Replace 'YOUR_API_KEY' with your actual Spoonacular API key
-const apiKey = 'b7024835d12443c3950e05df4c5db1ff';
-
-// Function to fetch recipes based on cuisine, diet, and available ingredients
-async function fetchRecipesByCriteria(cuisine, diet, ingredients) {
-  const endpoint = 'https://api.spoonacular.com/recipes/complexSearch';
-  const params = new URLSearchParams({
-    apiKey,
-    cuisine,
-    diet,
-    includeIngredients: ingredients.join(','),
-    number: 3, // Number of recipes to return
-    ranking: 2,
-    instructionsRequired: true, // Ensure instructions are included in response
-    addRecipeInformation: true
-  });
-  const url = `${endpoint}?${params}`;
-
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error('Failed to fetch recipes');
-    }
-    const data = await response.json();
-    return data.results;
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-}
-
-// Function to prompt the user for input
-function getUserInput() {
-  return new Promise((resolve, reject) => {
-    const diet = prompt('Enter the type of diet (or leave blank for any):');
-    const cuisine = prompt('Enter the type of cuisine (or leave blank for any):');
-    const ingredients = prompt('Enter the ingredients you have (comma-separated):');
-    if (ingredients !== null) {
-      const ingredientList = ingredients.split(',').map(ingredient => ingredient.trim());
-      resolve({ cuisine, diet, ingredients: ingredientList });
-    } else {
-      reject(new Error('No ingredients entered'));
-    }
-  });
-}
-
-// Main function to execute the program
-async function main() {
-  try {
-    const { diet, cuisine, ingredients } = await getUserInput();
-    console.log('Fetching recipes based on diet:', diet || 'any', ', cuisine:', cuisine || 'any', ', and ingredients:', ingredients);
-    const recipes = await fetchRecipesByCriteria(cuisine, diet, ingredients);
-    if (recipes.length === 0) {
-      console.log('No recipes found based on the provided criteria.');
-    } else {
-      console.log('Suggested Recipes:');
-      recipes.forEach(recipe => {
-        console.log(recipe.title, '- URL:', recipe.sourceUrl);
-      });
-    }
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-
-// Execute the main function
-main();
-*/
+resultsTitleContainer.appendChild(resultsTitle); */
 
