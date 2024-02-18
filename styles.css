@@ -7,9 +7,6 @@
     font-family: "Poppins",sans-serif;
 }
 
-.header{
-    background-color: rgb(70, 51, 26);
-}
 body{
     height: 100vh;
     display: -ms-grid;
