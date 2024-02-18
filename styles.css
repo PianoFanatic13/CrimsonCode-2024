@@ -71,7 +71,6 @@ input[type="range"]::-webkit-slider-thumb{
     margin-top: -9px;
     pointer-events: auto;
     border-radius: 50%;
-    z-index: 2;
     background-color:#46331a;
 }
 input[type="range"]::-moz-range-thumb{
@@ -80,6 +79,7 @@ input[type="range"]::-moz-range-thumb{
     width: 1.7em;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 2;
     pointer-events: auto;
 }
 input[type="range"]::-ms-thumb{
