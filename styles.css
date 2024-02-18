@@ -21,13 +21,7 @@ body {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.wrapper{
-    position: relative;
-    width: 95vmin;
-    background-color: #ffffff;
-    padding: 50px 40px 20px 40px;
-    border-radius: 10px;
-}
+
 .container{
     position: relative;
     width: 100%;
@@ -119,4 +113,15 @@ input[type="range"]:active::-webkit-slider-thumb{
     bottom: -14px;
     left: 0;
     right: 0;
+}
+.background-box {
+    position: absolute;
+    width: 600px; /* Set the width to match the logo width */
+    top: 0; /* Assuming the logo is 180px high; adjust if needed */
+    left: 50%; /* This will help to center the box */
+    transform: translateX(-50%); /* This will perfectly center the box */
+    background-color: #D5D7D8;
+    z-index: -1; /* To ensure it's below all other content */
+    /* If you want the box to run down to the bottom of the viewport */
+    bottom: 0;
 }
