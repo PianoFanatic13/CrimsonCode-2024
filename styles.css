@@ -92,7 +92,7 @@ input[type="range"]::-ms-thumb{
 }
 
 .values{
-    width: 50%;
+    width: 100%;
     position: relative;
     margin: auto;
     padding: 5px 150px; /*padding second option makes line longer*/
@@ -102,19 +102,7 @@ input[type="range"]::-ms-thumb{
     font-size: 20px;
     color: #000000;
 }
-.values:before{
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
-    border-top: 15px solid #000000;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    margin: auto;
-    bottom: -14px;
-    left: 0;
-    right: 0;
-}
+
 .background-box {
     position: fixed; /* Change to fixed if you want it to extend to the bottom regardless of other content */
     width: 600px;
