@@ -24,3 +24,4 @@ After all the desired ingredients are entered, press the submit button
 
 5. Press generate to generate a link to a recipe which has your desired parameters
 
+Note: result printing not implemented yet, links are printed into console
