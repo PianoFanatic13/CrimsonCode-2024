@@ -101,27 +101,11 @@ function handleRadioSelectionDiet(event, callback) {
   console.log('Selected Diet:', selectedDiet);
 }
 
+function showResults() {
+  document.getElementById("resultsTitle").innerHTML = "Results";
+}
 
 
-
-// Main function to execute the program
-/* async function main() {
-  try {
-    const { diet, cuisine, ingredients } = await getIngredientList();
-    console.log('Fetching recipes based on diet:', diet || 'any', ', cuisine:', cuisine || 'any', ', and ingredients:', ingredients);
-    const recipes = await fetchRecipesByCriteria(cuisine, diet, ingredients);
-    if (recipes.length === 0) {
-      console.log('No recipes found based on the provided criteria.');
-    } else {
-      console.log('Suggested Recipes:');
-      recipes.forEach(recipe => {
-        console.log(recipe.title, '- URL:', recipe.sourceUrl);
-      });
-    }
-  } catch (error) {
-    console.error(error.message);
-  }
-} */
 
 var ingredientsList;
 var cuisine = '';
@@ -161,22 +145,6 @@ document.querySelectorAll('input[name="Diet"]').forEach(radio => {
   });
 });
 
-/* document.addEventListener('DOMContentLoaded', function() {
-  // Add event listener to the generate button
-  document.getElementById('generateButton').addEventListener('click', function() {
-    const recipes = fetchRecipesByCriteria(cuisine, diet, ingredientsList);
-
-    if (recipes.length === 0) {
-      console.log('No recipes found based on the provided criteria.');
-    } else {
-      console.log('Suggested Recipes:');
-      recipes.forEach(recipe => {
-        console.log(recipe.title, '- URL:', recipe.sourceUrl);
-      });
-  };
-});
-}); */
-
 document.addEventListener('DOMContentLoaded', function() {
   // Add event listener to the generate button
   document.getElementById('generateButton').addEventListener('click', async function() {
@@ -203,42 +171,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.getElementById("generateButton").addEventListener("click", showResults);
 
 
 
-/* function main(ingredientsList, cuisine) {
-
-
-console.log('Ingredients List:', ingredientsList);
-
-console.log("Cuisine is:", cuisine);
-
-//console.log("Diet is:", diet);
-
-}
-
-// Execute the main function
-main(); */
-
-
-
-
-/*
-document.querySelector("#newTask-Form").addEventListener("submit", (event) => {
-  event.preventDefault()
-  const ingredients = 
-});
-
-
-
-const resultsTitleContainer = document.querySelector("#resultsTitleContainer");
+/* const resultsTitleContainer = document.querySelector("#resultsTitleContainer");
 
 const resultsTitle = document.createElement('div');
 resultsTitle.id = resultsTitle;
 resultsTitle.value = "Results"
 
-resultsTitleContainer.appendChild(resultsTitle);
-*/
+resultsTitleContainer.appendChild(resultsTitle); */
 
 
 
