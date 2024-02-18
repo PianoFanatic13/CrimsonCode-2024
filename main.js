@@ -34,7 +34,7 @@ window.onload = function () {
 
 
 // Replace 'YOUR_API_KEY' with your actual Spoonacular API key
-const apiKey = 'f218b2cd26904e5e8a8684fd9aae53b0';
+const apiKey = 'b7024835d12443c3950e05df4c5db1ff';
 
 // Function to fetch recipes based on cuisine, diet, and available ingredients
 async function fetchRecipesByCriteria(cuisine, diet, ingredients) {
