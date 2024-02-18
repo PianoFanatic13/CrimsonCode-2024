@@ -8,8 +8,10 @@ async function fetchRecipesByCuisineAndIngredients(cuisine, ingredients) {
     apiKey,
     cuisine,
     includeIngredients: ingredients.join(','),
-    number: 5, // Number of recipes to return
-    instructionsRequired: true // Ensure instructions are included in response
+    number: 3, // Number of recipes to return
+    ranking: 2,
+    instructionsRequired: true, // Ensure instructions are included in response
+    addRecipeInformation: true
   });
   const url = `${endpoint}?${params}`;
 
