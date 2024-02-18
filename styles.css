@@ -92,7 +92,7 @@ input[type="range"]::-ms-thumb{
 }
 
 .values{
-    width: 32%;
+    width: 50%;
     position: relative;
     margin: auto;
     padding: 5px 150px; /*padding second option makes line longer*/
