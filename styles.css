@@ -11,7 +11,7 @@ body {
     display: -ms-grid;
     display: grid;
     place-items: center;
-    background-image: url('background.jpg'); /* Make sure this path is correct */
+    background-image: url('background1.jpg');
     background-size: cover; 
     background-repeat: no-repeat; 
     background-attachment: fixed;
