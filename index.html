@@ -9,69 +9,65 @@
 <body>
     <div class="background-box"></div>
     <div class="header">
-        <img src = "Website logo.png" width = "546" height="180" alt = "recipes.compare header">
+        <img src="Website logo.png" width="546" height="180" alt="recipes.compare header">
     </div>
 
-    <div>
-    <form action = "results.html" method = "GET">
-    <h2 style = "color: #49331b;"> Welcome to Recipes.compare!</h2>
-    <form action = "results.html" method = "GET">
+    <form action="results.html" method="GET">
+        <h2 style="color: #49331b;">Welcome to Recipes.compare!</h2>
         <div>
-            <label for = "Ingredients">Ingredients (comma seperated): </label>
-            <input type = "text" name = "Ingredients" placeholder="dog" required><br><br>
+            <label for="Ingredients">Ingredients (comma separated): </label>
+            <input type="text" name="Ingredients" placeholder="dog" required><br><br>
         </div>
-        <form>
-            <hr><p>Cuisine:</p>
-            <input type="radio" name = "Cuisine"> American 
-            <input type="radio" name = "Cuisine"> Chinese 
-            <input type="radio" name = "Cuisine"> French <br>
-            <input type="radio" name = "Cuisine"> Greek 
-            <input type="radio" name = "Cuisine"> Hawaiian
-            <input type="radio" name = "Cuisine"> Indian <br>
-            <input type="radio" name = "Cuisine"> Jamaican 
-            <input type="radio" name = "Cuisine"> Japanese 
-            <input type="radio" name = "Cuisine"> Korean <br>
-            <input type="radio" name = "Cuisine"> Mexican 
-            <input type="radio" name = "Cuisine"> Nigerian 
-            <input type="radio" name = "Cuisine"> Peruvian <br>
-            <input type="radio" name = "Cuisine"> Thai 
-            <input type="radio" name = "Cuisine"> Vietnamese <br><br>
-        </form>
-
-        <form>
-            <hr><p>Filters:</p>
-            <input type="checkbox" name = ""> Popular 
-            <input type="checkbox" name = ""> Healthy <br>
-            <input type="checkbox" name = ""> Vegetarian 
-            <input type="checkbox" name = ""> Vegan <br>
-            <input type="checkbox" name = ""> Gluten Free 
-            <input type="checkbox" name = ""> Dairy Free <br>
-        </form>
-    </div>
-    <div class="wrapper">
-        <div class="values">
-            <span id="range1">
-                0
-            </span>
-            <span> &dash; </span>
-            <span id="range2">
-                100
-            </span>
+        
+        <hr>
+        <p>Cuisine:</p>
+        <input type="radio" name="Cuisine" value="American"> American 
+        <input type="radio" name="Cuisine" value="Chinese"> Chinese 
+        <input type="radio" name="Cuisine" value="French"> French <br>
+        <input type="radio" name="Cuisine" value="Greek"> Greek 
+        <input type="radio" name="Cuisine" value="Hawaiian"> Hawaiian
+        <input type="radio" name="Cuisine" value="Indian"> Indian <br>
+        <input type="radio" name="Cuisine" value="Jamaican"> Jamaican 
+        <input type="radio" name="Cuisine" value="Japanese"> Japanese 
+        <input type="radio" name="Cuisine" value="Korean"> Korean <br>
+        <input type="radio" name="Cuisine" value="Mexican"> Mexican 
+        <input type="radio" name="Cuisine" value="Nigerian"> Nigerian 
+        <input type="radio" name="Cuisine" value="Peruvian"> Peruvian <br>
+        <input type="radio" name="Cuisine" value="Thai"> Thai 
+        <input type="radio" name="Cuisine" value="Vietnamese"> Vietnamese <br><br>
+        
+        <hr>
+        <p>Filters:</p>
+        <input type="checkbox" name="Filter" value="Popular"> Popular 
+        <input type="checkbox" name="Filter" value="Healthy"> Healthy <br>
+        <input type="checkbox" name="Filter" value="Vegetarian"> Vegetarian 
+        <input type="checkbox" name="Filter" value="Vegan"> Vegan <br>
+        <input type="checkbox" name="Filter" value="GlutenFree"> Gluten Free 
+        <input type="checkbox" name="Filter" value="DairyFree"> Dairy Free <br>
+        
+        <div class="wrapper">
+            <div class="values">
+                <span id="range1">
+                    0
+                </span>
+                <span> &dash; </span>
+                <span id="range2">
+                    100
+                </span>
+            </div>
+            <div class="container">
+                <div class="slider-track"></div>
+                <input type="range" min="0" max="2000" value="600" id="slider-1" name="slider1" oninput="slideOne()">
+                <input type="range" min="0" max="2000" value="1400" id="slider-2" name="slider2" oninput="slideTwo()">
+            </div>
         </div>
-        <div class="container">
-            <div class="slider-track"></div>
-            <input type="range" min="0" max="2000" value="600" id="slider-1" oninput="slideOne()">
-            <input type="range" min="0" max="2000" value="1400" id="slider-2" oninput="slideTwo()">
-        </div>
-    </div>
-        <button type = "reset">
+        
+        <button type="reset">
             Reset
         </button>
-        <button type = "submit">
+        <button type="submit">
             Submit
         </button>
-
-        
     </form>
     <script src="main.js"></script>
 </body>
