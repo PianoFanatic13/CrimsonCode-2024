@@ -120,7 +120,7 @@ input[type="range"]::-ms-thumb{
     top: 0; /* Assuming the logo is 180px high; adjust if needed */
     left: 50%; /* This will help to center the box */
     transform: translateX(-50%); /* This will perfectly center the box */
-    background-color: #D5D7D8;
+    background-color: #a48d6f;
     z-index: -1; /* To ensure it's below all other content */
     /* If you want the box to run down to the bottom of the viewport */
     bottom: 0;
