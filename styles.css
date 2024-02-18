@@ -8,12 +8,7 @@
   width: 50px;
   background-color: #555;
 }
-</style>
-</head>
-<body>
 
-<h2>Square CSS</h2>
-<div class="square"></div>
-
-</body>
-</html> 
+.header{
+    background-color: rgb(70, 51, 26);
+}
