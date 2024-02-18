@@ -94,7 +94,7 @@ input[type="range"]::-ms-thumb{
     pointer-events: auto;
 }
 input[type="range"]:active::-webkit-slider-thumb{
-    background-color: #ffffff;
+    background-color: #785a25;
 }
 .values{
     width: 32%;
