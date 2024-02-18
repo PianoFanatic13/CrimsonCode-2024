@@ -6,12 +6,20 @@
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
 }
-
-body{
+body {
     height: 100vh;
     display: -ms-grid;
     display: grid;
     place-items: center;
+    background-image: url('background.jpg'); /* Make sure this path is correct */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    /* Rest of your body styles */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 .wrapper{
     position: relative;
@@ -111,10 +119,4 @@ input[type="range"]:active::-webkit-slider-thumb{
     bottom: -14px;
     left: 0;
     right: 0;
-}
-body {
-    background-image: url('background.jpg');
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
 }
