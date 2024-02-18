@@ -33,33 +33,28 @@ window.onload = function () {
 
 
 
-
 // Replace 'YOUR_API_KEY' with your actual Spoonacular API key
-const apiKey = "f218b2cd26904e5e8a8684fd9aae53b0";
+const apiKey = 'f218b2cd26904e5e8a8684fd9aae53b0';
 
-const idk = "vegetarian"
-
-// Function to fetch recipes based on cuisine and available ingredients
-async function fetchRecipesByCuisineAndIngredients(cuisine, ingredients) {
-  const endpoint = "https://api.spoonacular.com/recipes/complexSearch";
+// Function to fetch recipes based on cuisine, diet, and available ingredients
+async function fetchRecipesByCriteria(cuisine, diet, ingredients) {
+  const endpoint = 'https://api.spoonacular.com/recipes/complexSearch';
   const params = new URLSearchParams({
     apiKey,
     cuisine,
+    diet,
     includeIngredients: ingredients.join(','),
     number: 3, // Number of recipes to return
     ranking: 2,
     instructionsRequired: true, // Ensure instructions are included in response
-    addRecipeInformation: true,
-    addNutritionInformation: true,
-    //minCalories: sliderOne.value,
-    //maxCalories: sliderTwo.value
+    addRecipeInformation: true
   });
   const url = `${endpoint}?${params}`;
 
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error("Failed to fetch recipes");
+      throw new Error('Failed to fetch recipes');
     }
     const data = await response.json();
     return data.results;
@@ -72,19 +67,14 @@ async function fetchRecipesByCuisineAndIngredients(cuisine, ingredients) {
 // Function to prompt the user for input
 function getUserInput() {
   return new Promise((resolve, reject) => {
-    const cuisine = prompt(
-      "Enter the type of cuisine (or leave blank for any):"
-    );
-    const ingredients = prompt(
-      "Enter the ingredients you have (comma-separated):"
-    );
+    const diet = prompt('Enter the type of diet (or leave blank for any):');
+    const cuisine = prompt('Enter the type of cuisine (or leave blank for any):');
+    const ingredients = prompt('Enter the ingredients you have (comma-separated):');
     if (ingredients !== null) {
-      const ingredientList = ingredients
-        .split(",")
-        .map((ingredient) => ingredient.trim());
-      resolve({ cuisine, ingredients: ingredientList });
+      const ingredientList = ingredients.split(',').map(ingredient => ingredient.trim());
+      resolve({ cuisine, diet, ingredients: ingredientList });
     } else {
-      reject(new Error("No ingredients entered"));
+      reject(new Error('No ingredients entered'));
     }
   });
 }
@@ -92,23 +82,15 @@ function getUserInput() {
 // Main function to execute the program
 async function main() {
   try {
-    const { cuisine, ingredients } = await getUserInput();
-    console.log(
-      "Fetching recipes based on cuisine:",
-      cuisine || "any",
-      "and ingredients:",
-      ingredients
-    );
-    const recipes = await fetchRecipesByCuisineAndIngredients(
-      cuisine,
-      ingredients
-    );
+    const { diet, cuisine, ingredients } = await getUserInput();
+    console.log('Fetching recipes based on diet:', diet || 'any', ', cuisine:', cuisine || 'any', ', and ingredients:', ingredients);
+    const recipes = await fetchRecipesByCriteria(cuisine, diet, ingredients);
     if (recipes.length === 0) {
-      console.log("No recipes found based on the provided criteria.");
+      console.log('No recipes found based on the provided criteria.');
     } else {
-      console.log("Suggested Recipes:");
-      recipes.forEach((recipe) => {
-        console.log(recipe.title, "- URL:", recipe.sourceUrl);
+      console.log('Suggested Recipes:');
+      recipes.forEach(recipe => {
+        console.log(recipe.title, '- URL:', recipe.sourceUrl);
       });
     }
   } catch (error) {
@@ -123,31 +105,26 @@ main();
 
 /*
 // Replace 'YOUR_API_KEY' with your actual Spoonacular API key
-const apiKey = "f218b2cd26904e5e8a8684fd9aae53b0";
+const apiKey = 'f218b2cd26904e5e8a8684fd9aae53b0';
 
-const idk = "vegetarian"
-
-// Function to fetch recipes based on cuisine and available ingredients
-async function fetchRecipesByCuisineAndIngredients(cuisine, ingredients) {
-  const endpoint = "https://api.spoonacular.com/recipes/complexSearch";
+// Function to fetch recipes based on cuisine, diet, and available ingredients
+async function fetchRecipesByDiet(diet, ingredients) {
+  const endpoint = 'https://api.spoonacular.com/recipes/complexSearch';
   const params = new URLSearchParams({
     apiKey,
-    cuisine,
+    diet,
     includeIngredients: ingredients.join(','),
-    number: 3, // Number of recipes to return
+    number: 100, // Number of recipes to return
     ranking: 2,
     instructionsRequired: true, // Ensure instructions are included in response
-    addRecipeInformation: true,
-    addNutritionInformation: true,
-    //minCalories: sliderOne.value,
-    //maxCalories: sliderTwo.value
+    addRecipeInformation: true
   });
   const url = `${endpoint}?${params}`;
 
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error("Failed to fetch recipes");
+      throw new Error('Failed to fetch recipes');
     }
     const data = await response.json();
     return data.results;
@@ -158,54 +135,87 @@ async function fetchRecipesByCuisineAndIngredients(cuisine, ingredients) {
 }
 
 // Function to prompt the user for input
-function getUserInput() {
+function getUserInputDiet() {
   return new Promise((resolve, reject) => {
-    const cuisine = prompt(
-      "Enter the type of cuisine (or leave blank for any):"
-    );
-    const ingredients = prompt(
-      "Enter the ingredients you have (comma-separated):"
-    );
+    const diet = prompt('Enter the type of diet (or leave blank for any):');
+    const ingredients = prompt('Enter the ingredients you have (comma-separated):');
     if (ingredients !== null) {
-      const ingredientList = ingredients
-        .split(",")
-        .map((ingredient) => ingredient.trim());
-      resolve({ cuisine, ingredients: ingredientList });
+      const ingredientList = ingredients.split(',').map(ingredient => ingredient.trim());
+      resolve({ diet, ingredients: ingredientList });
     } else {
-      reject(new Error("No ingredients entered"));
+      reject(new Error('No ingredients entered'));
     }
   });
 }
 
+
+
+// Function to fetch recipes based on cuisine, diet, and available ingredients
+async function fetchRecipesByCuisine(cuisine, ingredients) {
+  const endpoint = 'https://api.spoonacular.com/recipes/complexSearch';
+  const params = new URLSearchParams({
+    apiKey,
+    cuisine,
+    includeIngredients: ingredients.join(','),
+    number: 100, // Number of recipes to return
+    ranking: 2,
+    instructionsRequired: true, // Ensure instructions are included in response
+    addRecipeInformation: true
+  });
+  const url = `${endpoint}?${params}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch recipes');
+    }
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
+// Function to prompt the user for input
+function getUserInputCuisine(ingredients) {
+  const cuisine = prompt('Enter the type of cuisine (or leave blank for any):');
+  return cuisine;
+    
+}
+
+
+
+
+
 // Main function to execute the program
 async function main() {
   try {
-    const { cuisine, ingredients } = await getUserInput();
-    console.log(
-      "Fetching recipes based on cuisine:",
-      cuisine || "any",
-      "and ingredients:",
-      ingredients
-    );
-    const recipes = await fetchRecipesByCuisineAndIngredients(
-      cuisine,
-      ingredients
-    );
-    if (recipes.length === 0) {
-      console.log("No recipes found based on the provided criteria.");
+    const { diet, ingredients } = await getUserInputDiet();
+    const { cuisine } = await getUserInputCuisine();
+    console.log('Fetching recipes based on diet:', diet || 'any', ', and ingredients:', ingredients);
+    const recipes1 = await fetchRecipesByDiet(diet, ingredients);
+    const recipes2 = await fetchRecipesByCuisine(cuisine, ingredients);
+    const filteredRecipes = recipes1.filter(value => recipes2.includes(value));
+    
+    if (filteredRecipes.length === 0) {
+      console.log('No recipes found based on the provided criteria.');
     } else {
-      console.log("Suggested Recipes:");
-      recipes.forEach((recipe) => {
-        console.log(recipe.title, "- URL:", recipe.sourceUrl);
+      console.log('Suggested Recipes:');
+      filteredRecipes.forEach(recipe => {
+        console.log(recipe.title, '- URL:', recipe.sourceUrl);
       });
     }
+    
   } catch (error) {
     console.error(error.message);
   }
 }
 
+
+
+
+
 // Execute the main function
 main();
-
-console.log(sliderOne.value);
 */
