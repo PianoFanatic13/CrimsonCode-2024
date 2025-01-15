@@ -1,6 +1,6 @@
 # CrimsonCode-2024
 
-https://recipes.compare is made by Abdul Islam, Eric Du, Charles Liu, Mir Park in 24 hours for the 2024 CrimsonCode Hackathon
+https://pianofanatic13.github.io/CrimsonCode2024/ is made by Abdul Islam, Eric Du, Charles Liu, Mir Park in 24 hours for the 2024 CrimsonCode Hackathon
 Website is hosted on Porkbun and goDaddy, and data fetched with Spoonacular API
 
 Usage: 
