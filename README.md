@@ -1,11 +1,7 @@
 # CrimsonCode-2024
 
-Credits: 
-Background Image: chatGPT
-Calories Slider: https://www.youtube.com/watch?v=DfSYmk_6vk8
-Data: Spoonacular API
 Recipes.compare is made by Abdul Islam, Eric Du, Charles Liu, Mir Park in 24 hours for the 2024 CrimsonCode Hackathon
-Website is hosted on Porkbun and goDaddy
+Website is hosted on Porkbun and goDaddy, and data fetched with Spoonacular API
 
 Usage: 
 
